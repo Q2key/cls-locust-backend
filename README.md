@@ -28,3 +28,8 @@ Before getting started, ensure you have the following installed:
    make ui #run locust with ui
    make headless #run locust in headless mode
     ```
+
+### Makefile install (optional)
+1. make install
+2. make ui #ui mode
+3. make silent #headless mode

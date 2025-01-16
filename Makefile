@@ -1,6 +1,6 @@
-
-headles:
+silent:
 	locust --config=.conf --headless
-run:
+ui:
 	locust --config=.conf
-.PHONY:run
+
+.PHONY:install silent ui

@@ -1,17 +1,11 @@
 clean:
-	sudo rm -rf env
-activate:
-	. env/bin/activate
+	sudo rm -rf venv
 install:
-	$(clean)
-	python3 -m venv env
-	$(activate)
-	pip install -r requirements.txt
+	python3 -m venv venv
+	. venv/bin/activate && pip install -r requirements.txt
 silent:
-	$(activate)
-	locust --config=.conf --headless
+	. venv/bin/activate && locust --config=.conf --headless
 ui:
-	$(activate)
-	locust --config=.conf
+	. venv/bin/activate && locust --config=.conf
 
-.PHONY:install silent ui
+.PHONY: install silent ui

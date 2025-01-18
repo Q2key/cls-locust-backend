@@ -9,27 +9,31 @@ Before getting started, ensure you have the following installed:
 - [Python 3.x](https://www.python.org/downloads/)
 - [Make](https://www.gnu.org/software/make/)
 
-## Setting up the environment
+Important!
+You need to create .conf file (take a look at the .conf.example) and fill the variables (for now you have to set up only the API HOST)
 
-1. **Create a virtual environment**: It is recommended to use a Python virtual environment to keep dependencies isolated.
+### Using GNU Make (easiest way for MacOS, Linux and other \*nix family users)
 
-   ```bash
-   python3 -m venv env
-   source env/bin/activate
-   pip install -r requirements.txt
-   ```
-2. **Setup Environments**: Create .conf file and set up the api host
-   ```code
-   # url example
-   host = http://localhost:5114/api
-   
-3. **Run locust** 
-    ```bash
-   make ui #run locust with ui
-   make headless #run locust in headless mode
-    ```
+```shell
+make install
+make ui
 
-### Makefile install (optional)
-1. make install
-2. make ui #ui mode
-3. make silent #headless mode
+#or for silent mode (without ui)
+make silent
+```
+
+### Without make (windows)
+
+```Shell
+# activate venv
+python3 -m venv venv
+. venv/bin/activate
+
+# install deps
+
+pip3 install -r requirements.txt
+
+#run locust
+locust --config=.conf
+```
+
